@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal de Ferramentas - Bemol</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <img src="https://bemolqa.vtexassets.com/assets/vtex/assets-builder/bemolqa.store-theme/15.0.15/images/bemol-logo___0e4ce7bac603e6a725fdc3b40ad03e13.svg" alt="Logo Bemol" class="logo">
+
+  <div class="container">
+    <div class="tabs">
+      <button class="tab-button active" data-tab="reservaTab">Solicitação de Reserva</button>
+      <button class="tab-button" data-tab="estoqueTab">Consulta de Estoque</button>
+      <button class="tab-button" data-tab="ordemTab">Consulta Produto da Ordem</button>
+      <button class="tab-button" data-tab="iaTab">Enviar pela Ordem com IA</button>
+    </div>
+
+    <!-- Aba 1 -->
+    <div id="reservaTab" class="tab-content active">
+      <h2>Solicitação de Reserva Interlojas</h2>
+      <form id="formularioReserva">
+        <label for="modo">Modo de Preenchimento</label>
+        <select id="modo" required>
+          <option value="">Selecione...</option>
+          <option value="consulta">Consulta por Ordem de Venda</option>
+          <option value="manual">Preenchimento Manual</option>
+        </select>
+
+        <label for="matricula">Matrícula</label>
+        <select name="matricula" id="matricula" required>
+          <option value="">Selecione...</option>
+          <option value="12920">ANDERSON CARNEIRO</option>
+          <option value="20001462">ANDRE LAZZARETTI</option>
+          <option value="18458">EMERSON MONTEIRO</option>
+          <option value="12043">ERIKA RIBEIRO</option>
+          <option value="14053">FRANKLIN COSTA</option>
+          <option value="11791">GEORGE FILHO</option>
+          <option value="6397">GIZELE LIMA</option>
+          <option value="10793">KEVEN BATISTA</option>
+          <option value="20001513">LUIS BANDEIRA</option>
+          <option value="20222">MANOEL MOURA</option>
+          <option value="11865">MARIANA JACAUNA</option>
+        </select>
+
+        <label for="centro">Centro</label>
+        <select name="centro" id="centro" required>
+          <option value="">Selecione...</option>
+          <option value="103">103</option>
+          <option value="106">106</option>
+          <option value="109">109</option>
+          <option value="116">116</option>
+          <option value="119">119</option>
+          <option value="120">120</option>
+          <option value="500">500</option>
+        </select>
+
+        <div id="consultaCampos" class="hidden">
+          <label for="ordem">Ordem de Venda</label>
+          <input type="text" id="ordem" name="ordem" />
+        </div>
+
+        <div id="manualCampos" class="hidden">
+          <label for="dados">Dados Manuais</label>
+          <textarea name="dados" id="dados" rows="4"></textarea>
+        </div>
+
+        <button type="submit">Enviar Solicitação</button>
+      </form>
+    </div>
+
+    <!-- Aba 2 -->
+    <div id="estoqueTab" class="tab-content">
+      <h1>Consulta de Estoque</h1>
+      <form id="form-estoque">
+        <label for="codigo">Código do Produto:</label>
+        <input type="text" id="codigo" name="codigo_produto" required placeholder="Ex: 231058" />
+        <button type="submit">Consultar</button>
+      </form>
+      <div id="resultado"></div>
+    </div>
+
+    <!-- Aba 3 -->
+    <div id="ordemTab" class="tab-content">
+      <h1>Consulta Produto da Ordem</h1>
+      <form id="form-ordem">
+        <label for="ordem_venda">Ordem de Venda:</label>
+        <input type="text" id="ordem_venda" name="ordem_venda" required placeholder="Digite a ordem de venda" />
+        <button type="submit">Consultar Ordem</button>
+      </form>
+      <div id="resultado-ordem"></div>
+    </div>
+
+    <!-- Aba 4 -->
+    <div id="iaTab" class="tab-content">
+      <h1>Enviar pela Ordem com IA</h1>
+      <form id="form-ia">
+        <label for="matricula-ia">Colaborador</label>
+        <select name="matricula-ia" id="matricula-ia" required>
+          <option value="">Selecione...</option>
+          <option value="12920">ANDERSON CARNEIRO</option>
+          <option value="20001462">ANDRE LAZZARETTI</option>
+          <option value="18458">EMERSON MONTEIRO</option>
+          <option value="12043">ERIKA RIBEIRO</option>
+          <option value="14053">FRANKLIN COSTA</option>
+          <option value="11791">GEORGE FILHO</option>
+          <option value="6397">GIZELE LIMA</option>
+          <option value="10793">KEVEN BATISTA</option>
+          <option value="20001513">LUIS BANDEIRA</option>
+          <option value="20222">MANOEL MOURA</option>
+          <option value="11865">MARIANA JACAUNA</option>
+        </select>
+
+        <label for="ordem-ia">Ordem de Venda</label>
+        <input type="text" id="ordem-ia" name="ordem-ia" required placeholder="Digite a ordem de venda" />
+
+        <button type="submit">Enviar</button>
+      </form>
+      <div id="resultado-ia"></div>
+    </div>
+  </div>
+
+  <img src="https://i.ytimg.com/vi/tR-KSimT0Go/maxresdefault.jpg" alt="Rodapé" class="rodape-img">
+
+  <script src="script.js"></script>
+</body>
+</html>
